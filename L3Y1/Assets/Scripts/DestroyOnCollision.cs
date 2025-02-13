@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class DestroyOnCollision : MonoBehaviour
 {
- private void OnCollisionEnter(Collision Collision)
+ private void OnTriggerEnter(Collider Collision)
  {
-    if (Collision.collider.CompareTag("Objective"))
+    if (Collision.GetComponent<Collider>().CompareTag("Player"))
     {
-        Destroy(Collision.gameObject);
+        Destroy(gameObject);
     }
  }
 }
